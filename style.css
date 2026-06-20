@@ -1,4 +1,4 @@
-
+/* --- Global Reset & Premium Dark Variables --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,19 +8,20 @@
 body { 
     font-family: 'Plus Jakarta Sans', sans-serif; 
     line-height: 1.7; 
-    background-color: #0b0f19; 
-    color: #cbd5e1; 
+    background-color: #0b0f19; /* Ultra-deep slate background */
+    color: #cbd5e1; /* Soft silver text for contrast */
     overflow-x: hidden;
     position: relative;
 }
 
+/* --- Ambient Glowing Effects for Fullscreen --- */
 .glow-bg-1 {
     position: fixed;
     top: -10%;
     right: -10%;
     width: 50vw;
     height: 50vw;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(0,0,0,0) 70%);
     z-index: -1;
     pointer-events: none;
 }
@@ -31,18 +32,19 @@ body {
     left: -10%;
     width: 50vw;
     height: 50vw;
-    background: radial-gradient(circle, rgba(225, 48, 108, 0.1) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(225, 48, 108, 0.08) 0%, rgba(0,0,0,0) 70%);
     z-index: -1;
     pointer-events: none;
 }
 
+/* --- Container Structure --- */
 .main-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px 60px 20px;
 }
 
-
+/* --- Header / Hero --- */
 .hero-header {
     text-align: center;
     padding: 100px 20px 60px 20px;
@@ -59,7 +61,7 @@ body {
 }
 
 .hero-header .subtitle {
-    color: #6366f1; 
+    color: #6366f1; /* Neon tech blue */
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 4px;
@@ -73,6 +75,7 @@ body {
     border-radius: 2px;
 }
 
+/* --- Sleek Glassmorphism Sections --- */
 .glass-section { 
     padding: 50px 40px; 
     background: rgba(15, 23, 42, 0.6); /* Semi-transparent slate card */
@@ -105,7 +108,7 @@ p {
     font-size: 1.05rem;
 }
 
-
+/* --- Image Containers (Zero crop, centers perfectly) --- */
 .img-frame {
     width: 100%;
     height: 190px;
@@ -123,6 +126,7 @@ p {
     object-fit: contain; 
 }
 
+/* --- Layout Grids & Cards --- */
 .grid {
     display: grid;
     gap: 25px;
@@ -155,6 +159,7 @@ p {
 .card-sub { font-size: 0.9rem; color: #64748b; margin-top: 4px; }
 .caption { font-weight: 700; letter-spacing: 1px; color: #ffffff; text-align: center; }
 
+/* --- Interactive Skill Tags --- */
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
@@ -178,26 +183,49 @@ p {
     box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
 }
 
+/* --- Responsive YouTube Video Wrapper --- */
+.video-card {
+    background: #090d16;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 yang ideal untuk elak video kena cut */
+    height: 0;
+    background: #020617;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.text-center { text-align: center; }
+.video-description { color: #64748b; font-size: 0.95rem; font-style: italic; }
+
+/* --- Maps Configuration --- */
 .map-container { 
     width: 100%;
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    filter: grayscale(1) invert(0.9) contrast(1.2); /* Makes the map match dark mode theme! */
+    filter: grayscale(1) invert(0.9) contrast(1.2); /* Blend dengan dark mode */
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
 
-.map-container:hover {
-    opacity: 1;
-}
+.map-container:hover { opacity: 1; }
+.map-container iframe { width: 100%; height: 380px; display: block; }
 
-.map-container iframe {
-    width: 100%;
-    height: 380px;
-    display: block;
-}
-
+/* --- Footer & Buttons --- */
 #footer-contact { 
     text-align: center; 
     background: linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(99,102,241,0.05) 100%);
@@ -219,25 +247,14 @@ p {
     text-decoration: none; 
     border-radius: 10px; 
     font-weight: 600;
-    letter-spacing: 0.5px;
     transition: all 0.3s ease;
 }
 
-.btn-wa { 
-    background: #25D366; 
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
-}
-.btn-ig { 
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.2);
-}
+.btn-wa { background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2); }
+.btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); box-shadow: 0 4px 15px rgba(220, 39, 67, 0.2); }
+.btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    filter: brightness(1.1);
-}
-
+/* --- Fully Responsive Breakpoints --- */
 @media (max-width: 850px) {
     .edu-grid { grid-template-columns: repeat(2, 1fr); }
 }
